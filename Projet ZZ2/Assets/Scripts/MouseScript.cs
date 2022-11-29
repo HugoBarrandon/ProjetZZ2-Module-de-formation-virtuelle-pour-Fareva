@@ -39,7 +39,7 @@ public class MouseScript : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.collider != null && hit.collider.tag == "Movable")
+            if (hit.collider != null && hit.collider.TryGetComponent<Movable>(out Movable obj))
             {
                 StartCoroutine(DragUpdate(hit.collider.gameObject));
             }
@@ -50,7 +50,8 @@ public class MouseScript : MonoBehaviour
     {
         float initialDistance = Vector3.Distance(clickedObject.transform.position, mainCamera.transform.position);
         clickedObject.TryGetComponent<Rigidbody>(out var rb);
-        while(mouseClic.ReadValue<float>() != 0)
+        Movable movable = clickedObject.GetComponent<Movable>();
+        while(mouseClic.ReadValue<float>() != 0 && movable.isMovable)
         {
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             if(rb != null)
@@ -65,5 +66,6 @@ public class MouseScript : MonoBehaviour
                 yield return null;
             }
         }
+        movable.transform.localPosition = movable.basePosition;
     }
 }
