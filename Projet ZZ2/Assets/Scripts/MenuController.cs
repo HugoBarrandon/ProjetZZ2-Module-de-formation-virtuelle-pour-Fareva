@@ -17,13 +17,17 @@ public class MenuController : MonoBehaviour
         
     }
 
+    // Changement de scene active
     public void ChangeScene(string _sceneName)
     {
+        Debug.Log("Changement de scene -> " + _sceneName);
         SceneManager.LoadScene( _sceneName );
     }
 
+    // Fermeture de l'application
     public void Quit()
     {
+        Debug.Log("Fermeture...");
         Application.Quit();
     }
 }
