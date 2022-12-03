@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6177508301538582089}
   - component: {fileID: 4268171814663106051}
   - component: {fileID: 5346913333027399129}
-  - component: {fileID: 6739597287798417838}
   m_Layer: 8
   m_Name: robotArm6_3
   m_TagString: Untagged
@@ -116,17 +115,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6739597287798417838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2096941554093160708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5fddea542ff25241a4ef8d687445711, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  basePosition: {x: 0, y: 0, z: 0}
-  isMovable: 1

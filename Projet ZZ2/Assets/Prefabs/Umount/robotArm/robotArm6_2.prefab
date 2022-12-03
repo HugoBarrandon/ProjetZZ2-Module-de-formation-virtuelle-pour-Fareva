@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5309924166353583209}
   - component: {fileID: 5982687691906107930}
   - component: {fileID: 8042019077753693493}
-  - component: {fileID: 910401727910659305}
+  - component: {fileID: 2224433159090282554}
   m_Layer: 8
   m_Name: robotArm6_2
   m_TagString: Untagged
@@ -116,7 +116,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &910401727910659305
+--- !u!114 &2224433159090282554
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,8 +125,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 595036238938601460}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5fddea542ff25241a4ef8d687445711, type: 3}
+  m_Script: {fileID: 11500000, guid: 24677a764197bc84c94405269fa413f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   basePosition: {x: 0, y: 0, z: 0}
   isMovable: 1
+  nextElement: {fileID: 0}

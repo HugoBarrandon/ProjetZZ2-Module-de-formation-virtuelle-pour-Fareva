@@ -51,10 +51,10 @@ public class MouseScript : MonoBehaviour
         float initialDistance = Vector3.Distance(clickedObject.transform.position, mainCamera.transform.position);
         clickedObject.TryGetComponent<Rigidbody>(out var rb);
         Movable movable = clickedObject.GetComponent<Movable>();
-        while(mouseClic.ReadValue<float>() != 0 && movable.isMovable)
+        while (mouseClic.ReadValue<float>() != 0 && movable._isMovable)
         {
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-            if(rb != null)
+            if (rb != null)
             {
                 Vector3 direction = ray.GetPoint(initialDistance) - clickedObject.transform.position;
                 rb.velocity = direction * mouseDragPhysicsSpeed;
@@ -66,6 +66,5 @@ public class MouseScript : MonoBehaviour
                 yield return null;
             }
         }
-        movable.transform.localPosition = movable.basePosition;
     }
 }
