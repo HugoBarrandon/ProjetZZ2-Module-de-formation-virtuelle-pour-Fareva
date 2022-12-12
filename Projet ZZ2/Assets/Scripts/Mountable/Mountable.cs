@@ -18,7 +18,7 @@ public class Mountable : Movable
                 Destroy(GetComponent<Rigidbody>());
 
                 transform.parent = collider.transform;
-
+                Debug.Log(transform.parent);
                 change.Invoke();
             }
         }

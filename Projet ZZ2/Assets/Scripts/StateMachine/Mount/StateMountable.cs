@@ -2,20 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StepMount : State
+public class StateMountable : State
 {
 
-    public StateEvent changeEvent = new StateEvent();
+    public StateEventMountable changeEvent = new StateEventMountable();
     public Mountable _aDeplacer;
     public Mountable _destination;
 
-    protected StateMachine<StepMount> stateMachine;
+    public int _nbDependances = 0;
 
-    public List<State> _nextSteps = new List<State>();
+
+    public List<StateMountable> _nextSteps = new List<StateMountable>();
 
     public void initDependances()
     {
-        foreach(StepMount sm in _nextSteps)
+        foreach(StateMountable sm in _nextSteps)
         {
             sm._nbDependances++;
             sm.initDependances();
@@ -40,7 +41,7 @@ public class StepMount : State
     public override void Exit()
     {
         _aDeplacer._isMovable = false;
-        foreach (StepMount sm in _nextSteps)
+        foreach (StateMountable sm in _nextSteps)
         {
             sm._nbDependances--;
         }
@@ -53,7 +54,7 @@ public class StepMount : State
        
     }
 
-    public override List<State> GetNextStates()
+    public List<StateMountable> GetNextStates()
     {
         return _nextSteps;
     }

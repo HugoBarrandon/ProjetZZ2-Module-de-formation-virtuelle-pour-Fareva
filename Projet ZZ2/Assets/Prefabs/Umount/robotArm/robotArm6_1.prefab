@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24677a764197bc84c94405269fa413f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _basePosition: {x: 0, y: 0, z: 0}
+  _basePosition: {x: 1.617357, y: 0.1945796, z: 0}
   _baseRotation: {x: 0, y: 0, z: 0, w: 1}
   _isMovable: 0
   change:

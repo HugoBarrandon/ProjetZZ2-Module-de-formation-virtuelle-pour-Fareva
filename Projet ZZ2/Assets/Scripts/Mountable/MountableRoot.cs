@@ -5,16 +5,16 @@ using UnityEngine;
 public class MountableRoot : MonoBehaviour
 {
     public List<Movable> _pieces = new List<Movable>();
-    public List<StepMount> _initSteps = new List<StepMount>();
+    public List<StateMountable> _initSteps = new List<StateMountable>();
 
-    private StateMachine<StepMount> stateMachine;
+    private StateMachineMountable stateMachine;
 
 
 
     void Start()
     {
-        stateMachine = new StateMachine<StepMount>();
-        foreach(StepMount sm in _initSteps)
+        stateMachine = new StateMachineMountable();
+        foreach(StateMountable sm in _initSteps)
         {
             sm.initDependances();
             sm.Enter();

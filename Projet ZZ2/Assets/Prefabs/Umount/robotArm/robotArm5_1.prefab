@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3630522505377953768}
   - component: {fileID: 7383363933256879088}
   - component: {fileID: 826221176871968155}
+  - component: {fileID: 774209032145417484}
   m_Layer: 8
   m_Name: robotArm5_1
   m_TagString: Untagged
@@ -115,3 +116,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &774209032145417484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3731796638055090146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24677a764197bc84c94405269fa413f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _basePosition: {x: 1.523199, y: -0.6037794, z: 0}
+  _baseRotation: {x: 0, y: 0, z: 0, w: 1}
+  _isMovable: 0
+  change:
+    m_PersistentCalls:
+      m_Calls: []
+  _nextElement: {fileID: 0}

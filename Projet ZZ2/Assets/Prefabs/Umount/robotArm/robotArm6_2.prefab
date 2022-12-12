@@ -128,6 +128,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24677a764197bc84c94405269fa413f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basePosition: {x: 0, y: 0, z: 0}
-  isMovable: 1
-  nextElement: {fileID: 0}
+  _basePosition: {x: 0.6693304, y: 0.3055772, z: 0}
+  _baseRotation: {x: 0, y: 0, z: 0, w: 1}
+  _isMovable: 0
+  change:
+    m_PersistentCalls:
+      m_Calls: []
+  _nextElement: {fileID: 0}
