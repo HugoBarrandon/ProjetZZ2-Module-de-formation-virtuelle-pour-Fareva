@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2143328926434196194}
   - component: {fileID: 5712704729926855602}
   - component: {fileID: 6988627996871274397}
+  - component: {fileID: 5112633276817332719}
   m_Layer: 8
   m_Name: robotArm0
   m_TagString: Untagged
@@ -129,5 +130,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99dd8339909fe0c48b8d38a4bffed887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pieces: []
-  lesEtapes: []
+  _pieces: []
+  _initSteps: []
+--- !u!114 &5112633276817332719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143328926434196197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24677a764197bc84c94405269fa413f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _basePosition: {x: 0, y: 0, z: 0}
+  _baseRotation: {x: 0, y: 0, z: 0, w: 1}
+  _isMovable: 0
+  change:
+    m_PersistentCalls:
+      m_Calls: []
+  _nextElement: {fileID: 0}

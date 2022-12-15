@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Mountable : Movable
 {
@@ -15,10 +16,10 @@ public class Mountable : Movable
         {
             if (collider.name == _nextElement.name)
             {
+                Destroy(GetComponent<XRGrabInteractable>());
                 Destroy(GetComponent<Rigidbody>());
 
                 transform.parent = collider.transform;
-                Debug.Log(transform.parent);
                 change.Invoke();
             }
         }
