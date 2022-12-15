@@ -46,8 +46,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aDeplacer: {fileID: 1741360996152610855}
   _destination: {fileID: 2184642831455740066}
+  _description: "Emboiter l'extr\xE9mit\xE9 de la pince basse"
   _nbDependances: 0
-  _nextSteps: []
+  _nextSteps:
+  - {fileID: 6397151436354038054}
 --- !u!1 &802259757849765982
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aDeplacer: {fileID: 8958596763921843059}
   _destination: {fileID: 3147309975105609644}
+  _description: Fixer la pince haute sur le haut du robot
   _nbDependances: 0
   _nextSteps: []
 --- !u!1 &1291918271003260207
@@ -142,8 +145,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aDeplacer: {fileID: 7038433210083146477}
   _destination: {fileID: 8958596763921843059}
+  _description: "Ajouter le 3eme \xE9l\xE9ment de la pince haute"
   _nbDependances: 0
-  _nextSteps: []
+  _nextSteps:
+  - {fileID: 5663012263296786557}
 --- !u!1 &1459740217372963532
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,8 +195,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aDeplacer: {fileID: 2184642831455740066}
   _destination: {fileID: 2605126477236177896}
+  _description: "Ajouter le 3eme \xE9l\xE9ment de la pince basse"
   _nbDependances: 0
-  _nextSteps: []
+  _nextSteps:
+  - {fileID: 1192504592499286295}
 --- !u!1 &4593632665514628414
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,6 +286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aDeplacer: {fileID: 2605126477236177896}
   _destination: {fileID: 3147309975105609644}
+  _description: Fixer la pince basse sur le haut du robot
   _nbDependances: 0
   _nextSteps: []
 --- !u!1 &6946121501557488532
@@ -327,8 +335,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aDeplacer: {fileID: 4765171700164397788}
   _destination: {fileID: 7522729938200069177}
+  _description: Poser la base du robot sur son socle
   _nbDependances: 0
-  _nextSteps: []
+  _nextSteps:
+  - {fileID: 6650318740845446079}
 --- !u!1 &7250281063037695352
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,8 +385,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aDeplacer: {fileID: 5848231729280618752}
   _destination: {fileID: 7038433210083146477}
+  _description: "Emboiter l'extr\xE9mit\xE9 de la pince haute"
   _nbDependances: 0
-  _nextSteps: []
+  _nextSteps:
+  - {fileID: 8999054779880794433}
 --- !u!1 &8214145584695248338
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,8 +435,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aDeplacer: {fileID: 3147309975105609644}
   _destination: {fileID: 6378783176490733989}
+  _description: Ajouter le 3eme segment
   _nbDependances: 0
-  _nextSteps: []
+  _nextSteps:
+  - {fileID: 5663012263296786557}
+  - {fileID: 1192504592499286295}
 --- !u!1 &8812717413770345896
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,14 +500,8 @@ MonoBehaviour:
   _initSteps:
   - {fileID: 4925519045708041748}
   - {fileID: 8008248377496141677}
-  - {fileID: 7687803298394027785}
-  - {fileID: 8999054779880794433}
-  - {fileID: 6397151436354038054}
-  - {fileID: 5663012263296786557}
-  - {fileID: 1192504592499286295}
-  - {fileID: 8695070527960074954}
-  - {fileID: 6650318740845446079}
   - {fileID: 7051818471232789626}
+  inGameUI: {fileID: 0}
 --- !u!1 &9012089313251844441
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,8 +548,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aDeplacer: {fileID: 6378783176490733989}
   _destination: {fileID: 4765171700164397788}
+  _description: Ajouter le 2nd segment
   _nbDependances: 0
-  _nextSteps: []
+  _nextSteps:
+  - {fileID: 8695070527960074954}
+  - {fileID: 7687803298394027785}
 --- !u!1 &9077762511824004843
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,6 +599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aDeplacer: {fileID: 6814951470972408295}
   _destination: {fileID: 4765171700164397788}
+  _description: "Ajouter les antennes \xE0 la base du robot"
   _nbDependances: 0
   _nextSteps: []
 --- !u!1001 &1463410717931730452

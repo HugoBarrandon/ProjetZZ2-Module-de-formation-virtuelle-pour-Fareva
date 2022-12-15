@@ -8,6 +8,7 @@ public class StateMountable : State
     public StateEventMountable changeEvent = new StateEventMountable();
     public Mountable _aDeplacer;
     public Mountable _destination;
+    public string _description = "";
 
     public int _nbDependances = 0;
 
