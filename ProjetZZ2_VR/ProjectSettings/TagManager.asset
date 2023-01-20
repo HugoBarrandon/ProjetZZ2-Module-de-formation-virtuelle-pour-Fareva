@@ -33,11 +33,14 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - HandPlayer
+  - Hand
+  - Grabbable
+  - Grabbing
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 457818271
     locked: 0
