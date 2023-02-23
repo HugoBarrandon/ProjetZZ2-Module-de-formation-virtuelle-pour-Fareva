@@ -2,14 +2,14 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-Library/
-Logs/
-Temp/
-Obj/
-Build/
-Builds/
-MemoryCaptures/
-UserSettings/
+ProjetZZ2_VR/Library/
+ProjetZZ2_VR/Logs/
+ProjetZZ2_VR/Temp/
+ProjetZZ2_VR/Obj/
+ProjetZZ2_VR/Build/
+ProjetZZ2_VR/Builds/
+ProjetZZ2_VR/MemoryCaptures/
+ProjetZZ2_VR/UserSettings/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 # !/[Aa]ssets/**/*.meta
