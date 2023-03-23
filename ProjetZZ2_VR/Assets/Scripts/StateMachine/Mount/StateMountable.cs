@@ -6,14 +6,17 @@ public class StateMountable : State
 {
 
     public StateEventMountable changeEvent = new StateEventMountable();
-    public Mountable _aDeplacer;
-    public Mountable _destination;
+    public List<Mountable> _aDeplacer = new List<Mountable>();
+    public List<Collider> _destination = new List<Collider>();
     public string _description = "";
 
     public int _nbDependances = 0;
 
+    private int nbPieces = 0;
 
     public List<StateMountable> _nextSteps = new List<StateMountable>();
+
+    public Vector3 baseAngle;
 
     public void initDependances()
     {
@@ -23,30 +26,39 @@ public class StateMountable : State
             sm.initDependances();
         }
 
-        _aDeplacer.change.AddListener(Change);
+        foreach (Mountable obj in _aDeplacer)
+        {
+            obj.change.AddListener(Change);
+        }
+        nbPieces = _aDeplacer.Count;
     }
 
     public void Change()
     {
-        _aDeplacer._isMovable = false;
-        changeEvent.Invoke(this);
+        nbPieces--;
+        if(nbPieces == 0)
+        {
+            changeEvent.Invoke(this);
+        }
     }
 
     public override void Enter()
     {
-        _aDeplacer._isMovable = true;
-        _aDeplacer._nextElement = _destination;
+        foreach(Mountable obj in _aDeplacer)
+        {
+            obj.SetUp(_destination);
+        }
     }
 
     public override void Exit()
     {
-        _aDeplacer._isMovable = false;
+        //_aDeplacer._isMovable = false;
         foreach (StateMountable sm in _nextSteps)
         {
             sm._nbDependances--;
         }
-        _aDeplacer.transform.localPosition = _aDeplacer._basePosition;
-        _aDeplacer.transform.localRotation = _aDeplacer._baseRotation;
+        //_aDeplacer.transform.localPosition = _aDeplacer._basePosition;
+        //_aDeplacer.transform.localRotation = _aDeplacer._baseRotation;
     }
 
     public override void StateUpdate()
@@ -57,5 +69,11 @@ public class StateMountable : State
     public List<StateMountable> GetNextStates()
     {
         return _nextSteps;
+    }
+
+    override public string ToString()
+    {
+        string ret = _description + " : " + _aDeplacer.Count + "/" + _destination.Count;
+        return ret;
     }
 }
