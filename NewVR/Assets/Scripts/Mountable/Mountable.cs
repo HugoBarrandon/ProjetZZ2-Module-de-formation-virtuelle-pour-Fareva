@@ -9,8 +9,7 @@ public class Mountable : Movable
     public UnityEvent change;
     public Mountable _nextElement;
 
-    private List<Collider> possibleDestinations;
-    private Vector3 angleDestination;
+    private List<Collider> possibleDestinations = new List<Collider>();
 
     public void SetUp(List<Collider> destinations)
     {
@@ -19,19 +18,21 @@ public class Mountable : Movable
 
     private void OnTriggerEnter(Collider other)
     {
+
         if(possibleDestinations.Contains(other))
         {
             Destroy(GetComponent<XRGrabInteractable>());
             Destroy(GetComponent<Rigidbody>());
 
-            transform.parent = GetComponent<Collider>().transform;
+            transform.parent = other.transform.parent.transform;
+
             if(_useBasePosition)
             {
-                transform.position = _basePosition;
+                transform.localPosition = _basePosition;
             }
             if (_useBaseRotation)
             {
-                transform.rotation = Quaternion.Euler(_baseRotation);
+                transform.localRotation = Quaternion.Euler(_baseRotation);
             }
             change.Invoke();
         }

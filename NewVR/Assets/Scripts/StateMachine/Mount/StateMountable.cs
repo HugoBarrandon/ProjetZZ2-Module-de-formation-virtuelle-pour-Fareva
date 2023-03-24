@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class StateMountable : State
 {
@@ -9,33 +10,38 @@ public class StateMountable : State
     public List<Mountable> _aDeplacer = new List<Mountable>();
     public List<Collider> _destination = new List<Collider>();
     public string _description = "";
-
+    public UnityEvent updateName = new UnityEvent();
     public int _nbDependances = 0;
-
     private int nbPieces = 0;
+    private int totalPieces = 0;
+    private bool inited = false;
 
     public List<StateMountable> _nextSteps = new List<StateMountable>();
 
-    public Vector3 baseAngle;
-
     public void initDependances()
     {
-        foreach(StateMountable sm in _nextSteps)
+        if(!inited)
         {
-            sm._nbDependances++;
-            sm.initDependances();
-        }
+            foreach (StateMountable sm in _nextSteps)
+            {
+                sm._nbDependances++;
+                sm.initDependances();
+            }
 
-        foreach (Mountable obj in _aDeplacer)
-        {
-            obj.change.AddListener(Change);
+            foreach (Mountable obj in _aDeplacer)
+            {
+                obj.change.AddListener(Change);
+            }
+            nbPieces = _aDeplacer.Count;
+            totalPieces = _aDeplacer.Count;
+            inited = true;
         }
-        nbPieces = _aDeplacer.Count;
     }
 
     public void Change()
     {
         nbPieces--;
+        updateName.Invoke();
         if(nbPieces == 0)
         {
             changeEvent.Invoke(this);
@@ -52,13 +58,10 @@ public class StateMountable : State
 
     public override void Exit()
     {
-        //_aDeplacer._isMovable = false;
         foreach (StateMountable sm in _nextSteps)
         {
             sm._nbDependances--;
         }
-        //_aDeplacer.transform.localPosition = _aDeplacer._basePosition;
-        //_aDeplacer.transform.localRotation = _aDeplacer._baseRotation;
     }
 
     public override void StateUpdate()
@@ -73,7 +76,7 @@ public class StateMountable : State
 
     override public string ToString()
     {
-        string ret = _description + " : " + _aDeplacer.Count + "/" + _destination.Count;
+        string ret = _description + " : " + (totalPieces - nbPieces) + "/" + totalPieces;
         return ret;
     }
 }

@@ -17,7 +17,10 @@ public class FollowingUI : MonoBehaviour
     void Update()
     {
         float cam_y = followingCamera.transform.position.y;
-        transform.position = followingCamera.transform.position + new Vector3(0, heightModifier-cam_y, 0);
+        Vector3 dist = followingCamera.transform.forward;
+        dist.y = 0;
+        dist = dist.normalized * 0.2f;
         transform.rotation = new Quaternion(0, followingCamera.transform.rotation.y, 0, followingCamera.transform.rotation.w);
+        transform.position = followingCamera.transform.position + new Vector3(0, heightModifier - cam_y, 0) + dist;
     }
 }

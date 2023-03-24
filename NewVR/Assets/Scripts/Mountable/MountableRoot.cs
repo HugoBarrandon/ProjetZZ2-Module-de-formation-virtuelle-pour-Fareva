@@ -1,30 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class MountableRoot : MonoBehaviour
 {
-    public List<Movable> _pieces = new List<Movable>();
     public List<StateMountable> _initSteps = new List<StateMountable>();
 
-    public InGameUI inGameUI;
+    public TextMeshProUGUI textMesh;
 
     private StateMachineMountable stateMachine;
 
+    public GameObject _base;
 
 
     void Start()
     {
         stateMachine = new StateMachineMountable();
+        stateMachine._base = _base;
         foreach(StateMountable sm in _initSteps)
         {
             sm.initDependances();
             sm.Enter();
             sm.changeEvent.AddListener(stateMachine.ChangeState);
+            sm.updateName.AddListener(stateMachine.UpdateDisplay);
             stateMachine.currentStates.Add(sm);
         }
+        stateMachine.updateUI.AddListener(ChangeUI);
         ChangeUI();
-        stateMachine.changeState.AddListener(ChangeUI);
     }
 
     private void Update()
@@ -34,7 +37,7 @@ public class MountableRoot : MonoBehaviour
 
     private void ChangeUI()
     {
-        if(inGameUI)
-            inGameUI.UpdateState(stateMachine.currentStates);
+        if(textMesh)
+            textMesh.text = stateMachine.ToString();
     }
 }

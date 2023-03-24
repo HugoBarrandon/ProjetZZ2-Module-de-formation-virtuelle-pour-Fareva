@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
             Vector3 right = Camera.current.transform.right;
             right.y = 0;
             Vector3 deplacement = forward * input.y + right * input.x;
-            transform.position += deplacement * SPEED;
+            transform.Translate(deplacement * -1* SPEED);
         }
     }
 }
